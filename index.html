@@ -1,0 +1,1124 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJOVA Wear - Premium Garment Export</title>
+    <style>
+        :root {
+            --bg-latte: #F5F2EB;
+            --bg-latte-dark: #EBE5D8;
+            --dark-card: #1c1c1c;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-main: #2C2C2C;
+            --text-muted: #555555;
+            --white: #FFFFFF;
+            --black: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-latte);
+            color: var(--text-main);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--black);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        .header-btn {
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .header-btn:hover {
+            background: var(--white);
+        }
+
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--gold);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,0.8)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #dcdcdc;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            padding: 14px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+            padding: 14px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: #8c7320;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-top: 8px;
+            color: var(--black);
+        }
+
+        /* --- ABOUT US --- */
+        .about {
+            background: var(--bg-latte-dark);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .about-feature-item {
+            background: var(--bg-latte);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- PRODUCTS --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #e2dbcd;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(212,175,55,0.2);
+            border-color: var(--gold);
+        }
+
+        .product-img {
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .product-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- MANUFACTURING / PARTNERSHIP --- */
+        .manufacturing {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .manufacturing .section-title h2 {
+            color: var(--white);
+        }
+
+        .mfg-desc {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: #b5b5b5;
+            font-size: 1.1rem;
+        }
+
+        .mfg-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .mfg-step-card {
+            background: var(--dark-card);
+            border: 1px solid #333;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .mfg-step-card:hover {
+            border-color: var(--gold);
+        }
+
+        .step-num {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .mfg-step-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .mfg-step-card p {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* --- WHY KJOVA WEAR --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .why-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- EXPORT MARKETS --- */
+        .markets {
+            background: var(--bg-latte-dark);
+        }
+
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .market-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2dbcd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .market-flag-img {
+            width: 65px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
+        .market-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .market-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- GALLERY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* --- REQUEST A QUOTE --- */
+        .quote-section {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .quote-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .quote-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--dark-card);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: #121212;
+            border: 1px solid #444;
+            color: var(--white);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--white);
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        footer {
+            background: #0d0d0d;
+            color: #b5b5b5;
+            padding: 70px 0 20px;
+            border-top: 2px solid var(--gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-logo {
+            height: 45px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            background: var(--dark-card);
+            color: var(--gold);
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #333;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Responsive Navbar Design */
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+            
+            .menu-toggle {
+                display: flex;
+            }
+
+            header nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--black);
+                border-bottom: 2px solid var(--gold);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+            header nav.active {
+                max-height: 400px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .header-btn {
+                display: none; /* مخفي في الموبايل أو ممكن تنقله جوه القائمة لو حببت */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <header>
+        <div class="logo-area">
+            <img src="logo-full.png" alt="KJOVA Wear Logo" class="logo-img" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=200&q=80';">
+        </div>
+        
+        <!-- زر الثلاث خطوط للموبايل -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#manufacturing">Manufacturing</a></li>
+                <li><a href="#markets">Markets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#quote" class="header-btn">Request a Quote</a>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Egyptian Cotton with a European Design</span>
+            <h1>Global Excellence in <span>Garment Export</span></h1>
+            <p>Bridging finest Egyptian raw materials with elite European cuts to supply top international retail markets and brands.</p>
+            <div class="hero-btns">
+                <a href="#quote" class="btn-primary">Request a Quote</a>
+                <a href="#products" class="btn-secondary">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT US -->
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span>Who We Are</span>
+                <h3>Your Trusted Export Partner for Elite Apparel</h3>
+                <p>KJOVA Wear is an Egyptian enterprise specializing in global ready-made garment export. We combine the world-renowned quality of authentic Egyptian cotton with state-of-the-art European tailoring and modern streetwear standards.</p>
+                <p>Our mission is to deliver seamless international supply chain solutions, ensuring absolute compliance with global standards, punctual logistics, and uncompromised quality.</p>
+                <div class="about-features">
+                    <div class="about-feature-item">Global Export Expertise</div>
+                    <div class="about-feature-item">OEM & Private Label</div>
+                    <div class="about-feature-item">Strict Quality Audits</div>
+                    <div class="about-feature-item">Sustainable Materials</div>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80" alt="KJOVA Wear Export">
+            </div>
+        </div>
+    </section>
+
+   <!-- 4. PRODUCTS & COLLECTIONS -->
+    <section id="products">
+        <div class="container">
+            
+            <div class="section-title">
+                <span>Our Collections</span>
+                <h2>Premium Ready-Made Apparel</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 10px auto 0;">Crafted with precision, styled for the international market using finest Egyptian cotton.</p>
+            </div>
+
+            <!-- قسم الهوديز وأطقم الـ Quarter-Zip -->
+            <div class="category-block" style="margin-bottom: 60px;">
+                <h3 style="color: var(--gold, #d4af37); font-size: 1.8rem; margin-bottom: 25px; border-bottom: 2px solid #333; padding-bottom: 10px;">🧥 Pologami Hoodies & Quarter-Zip Sets</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="hoodie-grey.jpg" alt="Grey Quarter-Zip Set" class="product-img">
+                        <div class="product-info">
+                            <h3>Pologami Quarter-Zip Grey Set</h3>
+                            <p>100% Combed Egyptian Cotton, ultimate softness & boxy fit crafted for global luxury.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="hoodie-white.jpg" alt="White Quarter-Zip Set" class="product-img">
+                        <div class="product-info">
+                            <h3>Pologami Quarter-Zip White Set</h3>
+                            <p>100% Combed Egyptian Cotton, refined European design with superior durability.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="hoodie-olive.jpg" alt="Olive Quarter-Zip Set" class="product-img">
+                        <div class="product-info">
+                            <h3>Pologami Quarter-Zip Olive Set</h3>
+                            <p>100% Combed Egyptian Cotton, rich earthy tone with premium fleece texture.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="hoodie-brown.jpg" alt="Brown Quarter-Zip Set" class="product-img">
+                        <div class="product-info">
+                            <h3>Pologami Quarter-Zip Brown Set</h3>
+                            <p>100% Combed Egyptian Cotton, elite weight and unmatched cozy streetwear feel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم باقي المنتجات -->
+            <div class="category-block" style="margin-bottom: 40px;">
+                <h3 style="color: var(--gold, #d4af37); font-size: 1.8rem; margin-bottom: 25px; border-bottom: 2px solid #333; padding-bottom: 10px;">👕 General Apparel Collections</h3>
+                <div class="products-grid">
+                    <div class="product-card" style="grid-column: 1 / -1; background: #f9f9f9; padding: 20px; border-radius: 12px;">
+    <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: #111;">T-Shirts Collection</h3>
+    <p style="margin-bottom: 20px; color: #666;">100% Combed Egyptian Cotton, breathable fabric and ultimate durability. Explore all available colors and styles below:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="tshirt-collection.jpg" alt="T-Shirts Collection" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="tshirt-white.jpg" alt="White T-Shirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="tshirt-grey.jpg" alt="Grey T-Shirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="tshirt-beige.jpg" alt="Beige T-Shirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidd en; background: #fff; border: 1px solid #ddd;">
+            <img src="tshirt-outdoor-black.jpg" alt="Outdoor Black T-Shirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+    </div>
+</div>
+                <div class="product-card" style="grid-column: 1 / -1; background: #f9f9f9; padding: 20px; border-radius: 12px;">
+    <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: #111;">Polo Shirts Collection</h3>
+    <p style="margin-bottom: 20px; color: #666;">Classic European cut, pique knit, refined casual luxury made in Egypt. Explore all available colors and details below:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="polo-colors-collection.jpg" alt="Polo Colors" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="polo-group-hanging.jpg" alt="Polo Group" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="polo-beige-single.jpg" alt="Beige Polo" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="polo-black-single.jpg" alt="Black Polo" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="polo-white-fabric.jpg" alt="White Fabric" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="polo-darkgrey-fabric.jpg" alt="Dark Grey Fabric" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+    </div>
+</div>
+                    </div>
+                   
+                <div class="product-card" style="grid-column: 1 / -1; background: #f9f9f9; padding: 20px; border-radius: 12px;">
+    <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: #111;">Sweatshirts Collection</h3>
+    <p style="margin-bottom: 20px; color: #666;">Designed with premium cotton for modern comfort and durability. Explore all available colors and details below:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="sweatshirt-collection.jpg" alt="Sweatshirts Collection" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="sweatshirt-black.jpg" alt="Black Sweatshirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="sweatshirt-green.jpg" alt="Green Sweatshirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="sweatshirt-beige.jpg" alt="Beige Sweatshirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="sweatshirt-grey.jpg" alt="Grey Sweatshirt" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="sweatshirt-detail.jpg" alt="Sweatshirt Detail" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+    </div>
+</div>
+                  <div class="product-card" style="grid-column: 1 / -1; background: #f9f9f9; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+    <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: #111;">Pants & Joggers Collection</h3>
+    <p style="margin-bottom: 20px; color: #666;">Premium washed denim and relaxed streetwear cuts crafted for ultimate style and comfort. Check out the details and fits below:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-front.jpg" alt="Baggy Denim Front View" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-side.jpg" alt="Baggy Denim Side View" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-back.jpg" alt="Baggy Denim Back View" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-pose.jpg" alt="Baggy Denim Styling" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-pocket.jpg" alt="Denim Pocket Detail" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-full-1.jpg" alt="Denim Full Front" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-full-1-back.jpg" alt="Denim Full Back" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-detail-waist.jpg" alt="Waistband Detail" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-detail-side.jpg" alt="Side Pocket Detail" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #ddd;">
+            <img src="pants-1-detail-back.jpg" alt="Back Pockets Detail" style="width: 100%; height: 220px; object-fit: cover;">
+        </div>
+    </div>
+</div>
+
+            <!-- Custom Manufacturing Card -->
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="logo.png" alt="KJOVA Wear Logo" class="product-img" style="object-fit: contain; background: #121212; padding: 20px;">
+                    <div class="product-info">
+                        <h3>Custom Manufacturing</h3>
+                        <p>OEM & Private label solutions customized to your brand tech packs.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. MANUFACTURING / PARTNERSHIP -->
+    <section id="manufacturing" class="manufacturing">
+        <div class="container">
+            <div class="section-title">
+                <span style="color: var(--gold);">Our Ecosystem</span>
+                <h2>Strategic Manufacturing & Production Process</h2>
+            </div>
+            <p class="mfg-desc">Through strategic alliances with top-tier industrial manufacturing facilities, KJOVA Wear manages your entire production lifecycle under rigorous supervision, guaranteeing elite execution from concept to final export.</p>
+            <div class="mfg-steps">
+                <div class="mfg-step-card">
+                    <span class="step-num">01</span>
+                    <h4>Design & Tech Pack</h4>
+                    <p>Translating your brand vision into precise technical specifications.</p>
+                </div>
+                <div class="mfg-step-card">
+                    <span class="step-num">02</span>
+                    <h4>Fabric Selection</h4>
+                    <p>Sourcing premium-grade Egyptian cotton and specialty textiles.</p>
+                </div>
+                <div class="mfg-step-card">
+                    <span class="step-num">03</span>
+                    <h4>Sampling</h4>
+                    <p>Developing master prototypes for your final approval.</p>
+                </div>
+                <div class="mfg-step-card">
+                    <span class="step-num">04</span>
+                    <h4>Production</h4>
+                    <p>Executing large-scale assembly through certified partner factories.</p>
+                </div>
+                <div class="mfg-step-card">
+                    <span class="step-num">05</span>
+                    <h4>Quality Control</h4>
+                    <p>Rigorous multi-stage inspections checking stitching, sizing, and finish.</p>
+                </div>
+                <div class="mfg-step-card">
+                    <span class="step-num">06</span>
+                    <h4>Packing & Export</h4>
+                    <p>Custom packaging, labeling, and secure global freight logistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WHY KJOVA WEAR -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <span>Core Advantages</span>
+                <h2>Why Choose KJOVA Wear?</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Egyptian Cotton Excellence</h3>
+                    <p>Access the world's finest, most durable, and breathable natural fibers directly from their origin.</p>
+                </div>
+                <div class="why-card">
+                    <h3>European Design Standards</h3>
+                    <p>Contemporary aesthetic layouts, boxy silhouettes, and high-end streetwear cuts suited for western markets.</p>
+                </div>
+                <div class="why-card">
+                    <h3>OEM & Private Label</h3>
+                    <p>Complete flexibility in custom branding, woven labels, custom tags, and unique packaging solutions.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Competitive Pricing</h3>
+                    <p>Optimized cost structures providing high profit margins for international wholesalers and retail chains.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Fast & Reliable Delivery</h3>
+                    <p>Streamlined export pathways ensuring on-time dispatch and smooth custom clearance coordination.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Export Expertise</h3>
+                    <p>Deep familiarity with international trade requirements, documentation, and global compliance regulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. EXPORT MARKETS -->
+    <section id="markets" class="markets">
+        <div class="container">
+            <div class="section-title">
+                <span>Global Footprint</span>
+                <h2>Our Export Markets</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 10px auto 0;">Delivering quality apparel across major continents and strategic regions.</p>
+            </div>
+            <div class="markets-grid">
+                <div class="market-card">
+                    <img src="https://flagcdn.com/w80/eu.png" alt="European Union Flag" class="market-flag-img">
+                    <h3>Europe</h3>
+                    <p>Serving premium boutiques and fashion brands across Germany, UK, France, and Italy.</p>
+                </div>
+                <div class="market-card">
+                    <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" class="market-flag-img">
+                    <h3>USA</h3>
+                    <p>Supplying high-demand retail chains and streetwear labels across North America.</p>
+                </div>
+                <div class="market-card">
+                    <img src="https://flagcdn.com/w80/sa.png" alt="Saudi Arabia Flag" class="market-flag-img">
+                    <h3>GCC</h3>
+                    <p>Partnering with luxury fashion distributors in UAE, Saudi Arabia, Kuwait, and Qatar.</p>
+                </div>
+                <div class="market-card">
+                    <img src="https://flagcdn.com/w80/za.png" alt="South Africa Flag" class="market-flag-img">
+                    <h3>Africa</h3>
+                    <p>Exporting high-value commercial apparel to expanding markets across the continent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. GALLERY -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <span>Visual Showcase</span>
+                <h2>Gallery & Production Floor</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Factory Floor"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=600&q=80" alt="Garment Rack"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Fabric Quality"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Apparel Styling"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. REQUEST A QUOTE -->
+    <section id="quote" class="quote-section">
+        <div class="container">
+            <div class="section-title">
+                <span style="color: var(--gold);">Get In Touch</span>
+                <h2>Request a Custom Quote</h2>
+            </div>
+            <div class="quote-form">
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name *</label>
+                            <input type="text" class="form-control" placeholder="Enter company name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Country *</label>
+                            <input type="text" class="form-control" placeholder="Your target country" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" class="form-control" placeholder="email@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp Number *</label>
+                            <input type="text" class="form-control" placeholder="+20..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category *</label>
+                            <select class="form-control">
+                                <option>T-Shirts</option>
+                                <option>Polo Shirts</option>
+                                <option>Hoodies</option>
+                                <option>Sweatshirts</option>
+                                <option>Pants & Joggers</option>
+                                <option>Jackets</option>
+                                <option>Shorts</option>
+                                <option>Custom OEM Manufacturing</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label>Project Details / Requirements *</label>
+                            <textarea class="form-control" placeholder="Describe quantities, target fabric, or special customization..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Quote Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo-full.png" alt="KJOVA Wear Logo" class="footer-logo" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=150&q=80';">
+                    <p>Global leader in ready-made garment export, merging fine Egyptian cotton with elite European cuts.</p>
+                    <div class="social-links">
+                        <a href="#">in</a>
+                        <a href="#">fb</a>
+                        <a href="#">ig</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h 3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#products">Products</a>
+                    <a href="#manufacturing">Manufacturing</a>
+                    <a href="#markets">Markets</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Collections</h3>
+                    <a href="#products">Pologami Hoodies</a>
+                    <a href="#products">Quarter-Zip Sets</a>
+                    <a href="#products">T-Shirts & Polos</a>
+                    <a href="#products">OEM Manufacturing</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>Cairo, Egypt</p>
+                    <p>Email: export@kjovawear.com</p>
+                    <p>WhatsApp: +20 100 000 0000</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 KJOVA Wear. All Rights Reserved. Crafted with Egyptian Cotton & European Standards.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript لتشغيل زر القائمة في الموبايل -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // قفل القائمة تلقائياً عند الضغط على أي لينسق في الموبايل
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        })
+    </script>
+</body>
+</html>
